@@ -1,0 +1,716 @@
+/* Global Styles */
+/* Header Styling */
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px #e4e4e4; /* Légère ombre portée */
+    transition: background-color 0.3s ease; /* Transition douce lors du changement de couleur */
+}
+
+/* Logo */
+header .logo img {
+    height: 50px; /* Ajuste la taille du logo */
+    width: auto;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    transition: transform 0.3s ease;
+}
+
+/* Effet de déplacement au survol */
+nav ul li:hover {
+    transform: translateY(-5px);
+}
+
+/* Liens de navigation */
+nav ul li a {
+    text-decoration: none;
+    color: #e4e4e4; /* Couleur de la police pour la lisibilité */
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease, padding 0.3s ease;
+}
+
+/* Sous-ligne personnalisée au survol */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6f61; /* Couleur rose-orange */
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Sous-ligne qui s'étend au survol */
+}
+
+/* Effet de survol pour le header */
+header:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond du header plus foncé lors du survol */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center; /* Centrer les éléments */
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding-left: 10px;
+    }
+
+    header .logo img {
+        margin: 0 auto; /* Centrer le logo pour les petits écrans */
+    }
+}
+
+
+/*--------------------------------------------------------*/
+
+
+
+
+/* Conteneur de la section */
+
+/* Section d'accueil */
+/* Global Styles */
+
+/* Global Styles */
+
+/* Section "Accueil" */
+
+/*----------------------------------------------------------------------*/
+
+/* Section "Accueil" */
+.slider {
+    width: 100%;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c2c2c; /* Fond plus sombre pour la section d'accueil */
+}
+
+/* Box contenant toute la section */
+.home-box {
+    width: 80%;
+    max-width: 1200px;
+    background-color: #1c1c1c; /* Fond gris foncé pour la boîte */
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px  #e4e4e4; /* Ombre plus marquée */
+    color: #e4e4e4; /* Couleur de la police claire */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Texte à gauche */
+.welcome-text {
+    max-width: 50%;
+}
+
+.welcome-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6f61; /* Titre en couleur rose-orange */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.welcome-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #dcdcdc; /* Texte plus clair pour améliorer la lisibilité */
+}
+
+.welcome-text .btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background-color: #ff6f61; /* Couleur d'accent rose-orange */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Effet sur le bouton */
+.welcome-text .btn:hover {
+    background-color: #ff3d28; /* Couleur plus foncée au survol */
+    transform: scale(1.05);
+}
+
+/* Photo à droite */
+.profile-pic {
+    max-width: 40%;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Image ronde */
+    border: 5px solid #fff;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Effet sur la photo */
+.home-box:hover .profile-pic img {
+    transform: scale(1.1); /* Agrandir légèrement l'image au survol */
+}
+
+/* Réactif sur les petits écrans */
+@media (max-width: 768px) {
+    .home-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .welcome-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .profile-pic {
+        max-width: 80%;
+    }
+}
+
+/* Animation au survol pour la boîte */
+.home-box:hover {
+    transform: translateY(-8px); /* Légère élévation */
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/*-----------------------------------------------------------------------*/
+
+
+
+
+/* Section "À propos" */
+/* Section "À propos" */
+.section {
+    padding: 50px 0;
+    background-color: #2c2c2c; /* Fond sombre pour correspondre aux autres sections */
+}
+
+/* Box pour la section entière "À propos de moi" */
+.about-box-container {
+    background-color: #383838; /* Fond plus foncé pour la boîte */
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px #e4e4e4; /* Ombre marquée pour l'effet de profondeur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #e4e4e4; /* Couleur de la police */
+}
+
+/* Box interne contenant les éléments de la section */
+.about-box {
+    padding: 20px;
+    color: #e4e4e4; /* Couleur de la police */
+}
+
+/* Box pour la présentation centrée */
+.presentation-box {
+    background-color: #1c1c1c; /* Fond un peu plus clair que la boîte principale */
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #e4e4e4; /* Couleur de la police */
+}
+
+/* Titre pour chaque box spécifique dans la section "À propos" */
+.presentation-box h3,
+.small-box h3 {
+    color: #ff6f61; /* Titre en couleur #ff6f61 */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Box pour les centres d'intérêt et formation, affichées sur la même ligne */
+.bottom-box {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Petites boxes pour les autres sections */
+.small-box {
+    background-color: #1c1c1c; /* Fond sombre avec bordure claire */
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    width: 48%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #e4e4e4; /* Couleur de la police */
+}
+
+/* Points de la liste (puces) dans les sections "À propos" */
+.presentation-box ul,
+.small-box ul {
+    list-style-type: disc; /* Utiliser des puces classiques */
+    margin-left: 20px;
+}
+
+.presentation-box li,
+.small-box li {
+    color: #e4e4e4; /* Couleur du texte des items de la liste */
+    font-size: 1rem;
+}
+
+.presentation-box li::marker,
+.small-box li::marker {
+    color: #ff6f61; /* Couleur des puces */
+}
+
+/* Titre centré */
+.text-center {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff6f61; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Effet au survol pour les boîtes */
+.about-box-container:hover,
+.presentation-box:hover,
+.small-box:hover {
+    transform: translateY(-8px); /* Légère élévation */
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/* Mise en page responsive pour petits écrans */
+@media (max-width: 768px) {
+    .presentation-box {
+        width: 100%;
+        max-width: none;
+    }
+
+    .small-box {
+        width: 100%;
+    }
+}
+
+
+
+
+
+/*----------------------------------------------------------------------*/
+
+
+
+/* Styles pour la section projets */
+/* Styles pour la section projets */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Projet individuel */
+.project {
+    display: flex;
+    align-items: center;
+    background-color: #1c1c1c; /* Fond sombre pour un look moderne et élégant */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px #e4e4e4; /* Ombre plus marquée */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    overflow: hidden;
+}
+
+.project-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.project-image {
+    flex: 0 0 40%;
+    margin-right: 20px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transition pour l'agrandissement de l'image */
+}
+
+/* Détails du projet */
+.project-details {
+    flex: 1;
+    color: #e4e4e4; /* Texte clair pour plus de lisibilité */
+}
+
+.project-details h3 {
+    font-size: 2rem; /* Taille du titre augmentée */
+    font-weight: 600;
+    color: #ff6f61; /* Titre en couleur accentuée pour attirer l'attention */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Espacement des lettres pour un effet plus dynamique */
+}
+
+.project-details p {
+    font-size: 1.1rem;
+    color: #b0b0b0; /* Couleur plus douce pour le texte */
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Liste des tâches */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #b0b0b0;
+}
+
+.task-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.task-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ff6f61; /* Changer la couleur de la puce */
+    font-size: 1.5rem;
+}
+
+/* Effet au survol des projets */
+.project:hover {
+    transform: translateY(-8px); /* Légère élévation avec plus de fluidité */
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+.project:hover .project-image img {
+    transform: scale(1.05); /* Zoom léger sur l'image */
+}
+
+/* Style du bouton */
+.btn {
+    display: inline-block;
+    padding: 8px 18px; /* Bouton plus petit */
+    background-color: #ff6f61; /* Couleur moderne pour le bouton */
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #d04f3b; /* Couleur légèrement plus sombre pour l'effet de survol */
+    transform: translateY(-2px); /* Légère élévation */
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-image {
+        flex: 0 0 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .project-details {
+        flex: 1;
+    }
+
+    .task-list li {
+        font-size: 0.9rem;
+    }
+
+    .project-details h3 {
+        font-size: 1.6rem; /* Taille du titre ajustée pour petits écrans */
+    }
+}
+
+
+
+
+
+/*--------------------------------------------------------------------------------*/
+
+
+
+
+/* Section "Formulaire de Contact" */
+.contact-section {
+    padding: 50px 0;
+    background-color: #2c2c2c; /* Fond sombre pour correspondre aux autres sections */
+}
+
+/* Conteneur du formulaire */
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1c1c1c; /* Fond sombre pour la box */
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px #e4e4e4; /* Ombre marquée pour l'effet de profondeur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Titre du formulaire */
+.contact-box .text-center {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #ff6f61; /* Accent rose vif pour le titre */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Formulaire */
+.contact-box .form-group {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.contact-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Champs du formulaire */
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #333; /* Couleur de fond sombre pour le champ */
+    color: #fff;
+}
+
+.contact-box input::placeholder,
+.contact-box textarea::placeholder {
+    color: #bbb; /* Placeholder plus clair */
+}
+
+/* Bouton du formulaire */
+.contact-box button {
+    background-color: #ff6f61; /* Couleur d'accent pour le bouton */
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-box button:hover {
+    background-color: #e64a4a; /* Couleur plus foncée au survol */
+    transform: scale(1.05); /* Effet de survol agrandi */
+}
+
+/* Liens sociaux */
+.socials {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-link {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #ff6f61; /* Couleur d'accent pour les icônes sociales */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+    color: #d04f3b; /* Couleur plus foncée au survol */
+    transform: scale(1.1); /* Effet de zoom sur les icônes */
+}
+
+/* Réactivité pour les petits écrans */
+@media (max-width: 768px) {
+    .contact-box {
+        padding: 20px;
+    }
+
+    .contact-box .text-center {
+        font-size: 1.8rem;
+    }
+
+    .social-link {
+        font-size: 1.2rem;
+    }
+}
+
+/* Effet au survol sur la box de contact */
+.contact-box:hover {
+    transform: translateY(-8px); /* Légère élévation au survol */
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/*-----------------------------------------------------------------------*/
+
+/* Section Compétences */
+
+/* Section sombre */
+.section.dark {
+    background-color: #2c2c2c; /* Fond sombre moderne */
+    color: #e4e4e4; /* Texte clair pour le contraste */
+    padding: 60px 20px;
+}
+
+/* Conteneur skills-box */
+.skills-box {
+    max-width: 100%;
+    margin: 0 auto; /* Centré */
+    background-color: #1c1c1c; /* Fond sombre plus clair pour le contraste */
+    padding: 40px;
+    border-radius: 15px; /* Coins arrondis plus marqués */
+    box-shadow: 0 4px 12px #e4e4e4; /* Ombre plus subtile */
+    overflow-x: auto; /* Ajoute un défilement horizontal si nécessaire */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Effet au survol sur skills-box */
+.skills-box:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre plus marquée au survol */
+}
+
+/* Titre */
+.skills-box h2 {
+    font-size: 2.5rem; /* Taille de police plus grande */
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ff6f61; /* Accent chaud pour le titre */
+    text-transform: uppercase; /* Majuscules pour un effet plus moderne */
+}
+
+/* Ligne des compétences */
+.skills-row {
+    display: flex;
+    gap: 30px; /* Espacement plus large entre les compétences */
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: auto; /* Défilement horizontal si l'écran est trop petit */
+    padding: 10px 0;
+}
+
+/* Compétences individuelles */
+.skill {
+    text-align: center;
+    padding: 20px; /* Plus d'espace pour chaque compétence */
+    border-radius: 12px; /* Coins plus arrondis */
+    background-color: #333; /* Fond sombre */
+    flex-shrink: 0; /* Empêche les compétences de rétrécir */
+    min-width: 150px; /* Largeur minimale pour chaque compétence */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Ombre douce */
+}
+
+/* Effet au survol sur les compétences */
+.skill:hover {
+    transform: translateY(-5px); /* Légère élévation */
+    background-color: #444; /* Changement de couleur de fond au survol */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+}
+
+/* Image des compétences */
+.skill img {
+    max-width: 60px;
+    height: auto;
+    margin-bottom: 15px; /* Plus d'espace sous l'image */
+    transition: transform 0.3s ease; /* Transition pour agrandissement au survol */
+}
+
+.skill img:hover {
+    transform: scale(1.1); /* Zoom sur l'image au survol */
+}
+
+/* Titre des compétences */
+.skill h3 {
+    font-size: 1.2rem; /* Taille du texte augmentée */
+    color: #fff;
+    font-weight: 600; /* Poids de police plus fort pour le titre */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #121212;
+    color: #b0b0b0;
+}
+
+footer a {
+    color: #ff6f61; /* Accent chaud pour les liens */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #d04f3b; /* Changer la couleur des liens au survol */
+}

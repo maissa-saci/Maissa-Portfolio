@@ -1,26 +1,33 @@
 /* Global Styles */
 /* Header Styling */
 /* Header */
+/* Global Styles */
+/* Header Styling */
+* {
+    box-sizing: border-box;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    padding: 20px 60px;
+    background-color: rgba(36, 31, 31, 0.5); /* Fond semi-transparent */
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 10px #e4e4e4; /* Légère ombre portée */
+    box-shadow: 0 4px 10px rgba(73, 65, 65, 0.2); /* Légère ombre portée */
     transition: background-color 0.3s ease; /* Transition douce lors du changement de couleur */
+    overflow: hidden;
+    flex-wrap: wrap;
 }
 
-/* Logo */
 header .logo img {
     height: 50px; /* Ajuste la taille du logo */
     width: auto;
 }
 
-/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -33,15 +40,13 @@ nav ul li {
     transition: transform 0.3s ease;
 }
 
-/* Effet de déplacement au survol */
 nav ul li:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Effet de déplacement vers le haut lors du survol */
 }
 
-/* Liens de navigation */
 nav ul li a {
     text-decoration: none;
-    color: #e4e4e4; /* Couleur de la police pour la lisibilité */
+    color: #fff;
     font-weight: bold;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -51,7 +56,7 @@ nav ul li a {
     transition: color 0.3s ease, padding 0.3s ease;
 }
 
-/* Sous-ligne personnalisée au survol */
+/* Ajout d'un effet de sous-lignage personnalisé */
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -59,7 +64,7 @@ nav ul li a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #ff6f61; /* Couleur rose-orange */
+    background-color:  #ff6f61; /* Couleur d'accent */
     transition: width 0.3s ease;
 }
 
@@ -67,23 +72,39 @@ nav ul li a:hover::after {
     width: 100%; /* Sous-ligne qui s'étend au survol */
 }
 
-/* Effet de survol pour le header */
+/* Effet au survol de la barre de navigation */
 header:hover {
     background-color: rgba(0, 0, 0, 0.7); /* Fond du header plus foncé lors du survol */
+}
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff6f61; /* Couleur du hamburger */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        align-items: center; /* Centrer les éléments */
+        align-items: flex-start;
         padding: 10px 20px;
     }
 
     nav ul {
+        display: none; /* Cache le menu par défaut */
         flex-direction: column;
+        background-color: #191717;
+        position: fixed;
         align-items: flex-start;
-        gap: 15px;
+        top: 60px;
+        right: 20px;
+        width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    
     }
 
     nav ul li {
@@ -96,10 +117,39 @@ header:hover {
         padding-left: 10px;
     }
 
+    nav ul.active {
+        display: flex; /* Affiche le menu lorsqu'il est actif */
+    }
+
+    .hamburger {
+        display: block; /* Affiche le bouton hamburger */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+    }
+}
+
+
+/* Pour les petits écrans */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        width: 100%;
+        flex-direction: column; /* Mettre le contenu en colonne */
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     header .logo img {
         margin: 0 auto; /* Centrer le logo pour les petits écrans */
     }
 }
+
 
 
 /*--------------------------------------------------------*/
@@ -119,33 +169,49 @@ header:hover {
 /*----------------------------------------------------------------------*/
 
 /* Section "Accueil" */
+/* Global Styles */
+* {
+    box-sizing: border-box; /* Inclut les marges/paddings dans le calcul des dimensions */
+    margin: 0;
+    padding: 0;
+}
+
+/* Section "Accueil" */
 .slider {
     width: 100%;
-    padding: 50px 20px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #2c2c2c; /* Fond plus sombre pour la section d'accueil */
+    overflow: hidden; /* Évite les débordements éventuels */
+     box-sizing: border-box;
+
 }
 
 /* Box contenant toute la section */
 .home-box {
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
     background-color: #1c1c1c; /* Fond gris foncé pour la boîte */
     padding: 40px;
     border-radius: 10px;
     display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 10px 30px  #e4e4e4; /* Ombre plus marquée */
+    box-shadow: 0 10px 30px #e4e4e4; /* Ombre plus marquée */
     color: #e4e4e4; /* Couleur de la police claire */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Coupe tout contenu débordant */
 }
 
 /* Texte à gauche */
 .welcome-text {
+    flex: 1; /* Permet une prise d'espace flexible */
     max-width: 50%;
+    min-width: 300px; /* Empêche une largeur trop petite */
+    padding-right: 20px;
 }
 
 .welcome-text h1 {
@@ -180,7 +246,10 @@ header:hover {
 
 /* Photo à droite */
 .profile-pic {
+    flex: 1; /* Permet une prise d'espace flexible */
     max-width: 40%;
+    min-width: 200px; /* Empêche une largeur trop petite */
+    padding-left: 20px;
 }
 
 .profile-pic img {
@@ -200,18 +269,22 @@ header:hover {
 /* Réactif sur les petits écrans */
 @media (max-width: 768px) {
     .home-box {
-        flex-direction: column;
+        flex-direction: column; /* Met les éléments en colonne */
         align-items: center;
         text-align: center;
+        width: 100%;
+        padding: 20px; /* Réduit le padding */
     }
 
     .welcome-text {
-        max-width: 100%;
+        max-width: 100%; /* Prend toute la largeur */
         margin-bottom: 20px;
+        padding-right: 0;
     }
 
     .profile-pic {
-        max-width: 80%;
+        max-width: 80%; /* Adapte la largeur de l'image */
+        padding-left: 0;
     }
 }
 
@@ -229,7 +302,8 @@ header:hover {
 /* Section "À propos" */
 /* Section "À propos" */
 .section {
-    padding: 50px 0;
+    width: 100%;
+    padding: 50px 20px;
     background-color: #2c2c2c; /* Fond sombre pour correspondre aux autres sections */
 }
 
@@ -241,9 +315,10 @@ header:hover {
     padding: 30px;
     margin: 40px auto;
     max-width: 1200px;
-    box-shadow: 0 10px 30px #e4e4e4; /* Ombre marquée pour l'effet de profondeur */
+    box-shadow: 0 10px 20px #e4e4e4; /* Ombre marquée pour l'effet de profondeur */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: #e4e4e4; /* Couleur de la police */
+    width: 100%;
 }
 
 /* Box interne contenant les éléments de la section */
@@ -288,7 +363,7 @@ header:hover {
     border: 2px solid #444;
     border-radius: 10px;
     padding: 20px;
-    width: 48%;
+    width: 100%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: #e4e4e4; /* Couleur de la police */
@@ -355,11 +430,13 @@ header:hover {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 0 20px;
+    padding: 50px 0px;
+    width: 100%;
 }
 
 /* Projet individuel */
 .project {
+    width: 100%;
     display: flex;
     align-items: center;
     background-color: #1c1c1c; /* Fond sombre pour un look moderne et élégant */
@@ -502,7 +579,7 @@ header:hover {
 
 /* Section "Formulaire de Contact" */
 .contact-section {
-    padding: 50px 0;
+    padding: 50px 60px;
     background-color: #2c2c2c; /* Fond sombre pour correspondre aux autres sections */
 }
 
@@ -512,7 +589,7 @@ header:hover {
     margin: 0 auto;
     background-color: #1c1c1c; /* Fond sombre pour la box */
     color: #fff;
-    padding: 30px;
+    padding: 60px;
     border-radius: 10px;
     box-shadow: 0 10px 30px #e4e4e4; /* Ombre marquée pour l'effet de profondeur */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -544,7 +621,7 @@ header:hover {
 .contact-box input,
 .contact-box textarea {
     width: 100%;
-    padding: 12px;
+    padding: 30px;
     border: 1px solid #444;
     border-radius: 5px;
     font-size: 1rem;
@@ -621,7 +698,7 @@ header:hover {
 .section.dark {
     background-color: #2c2c2c; /* Fond sombre moderne */
     color: #e4e4e4; /* Texte clair pour le contraste */
-    padding: 60px 20px;
+    padding: 60px 60px;
 }
 
 /* Conteneur skills-box */
@@ -701,9 +778,12 @@ header:hover {
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 20px 60px;
     background-color: #121212;
     color: #b0b0b0;
+    width: 100%;
+    left: 0;
+    overflow: hidden;
 }
 
 footer a {
@@ -714,3 +794,4 @@ footer a {
 footer a:hover {
     color: #d04f3b; /* Changer la couleur des liens au survol */
 }
+

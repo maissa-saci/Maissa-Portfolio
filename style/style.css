@@ -307,7 +307,7 @@ section.dark{
 
 /* Box pour la section entière "À propos de moi" */
 .about-box-container {
-    background-color: #383838; /* Fond plus foncé pour la boîte */
+    background-color: #242121; /* Fond plus foncé pour la boîte */
     border: 2px solid #333;
     border-radius: 12px;
     padding: 30px;

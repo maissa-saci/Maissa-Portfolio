@@ -712,7 +712,7 @@ section.dark{
     background-color: #1c1c1c; /* Fond sombre plus clair pour le contraste */
     padding: 40px;
     border-radius: 15px; /* Coins arrondis plus marqués */
-    box-shadow: 0 4px 12px #e4e4e4; /* Ombre plus subtile */
+    box-shadow: 0 6px 24px #e4e4e4; /* Ombre plus subtile */
     overflow-x: auto; /* Ajoute un défilement horizontal si nécessaire */
     transition: box-shadow 0.3s ease;
 }

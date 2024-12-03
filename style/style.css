@@ -1,33 +1,35 @@
-/* Global Styles */
-/* Header Styling */
-/* Header */
-/* Global Styles */
-/* Header Styling */
+
+/* Global */
 * {
     box-sizing: border-box;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
-    background-color: rgba(36, 31, 31, 0.5); /* Fond semi-transparent */
+    background-color: #454242;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(73, 65, 65, 0.2); /* Légère ombre portée */
-    transition: background-color 0.3s ease; /* Transition douce lors du changement de couleur */
-    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(73, 65, 65, 0.2);
+    transition: background-color 0.3s ease;
     flex-wrap: wrap;
 }
 
-header .logo img {
-    height: 50px; /* Ajuste la taille du logo */
+header:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.logo img {
+    height: 50px;
     width: auto;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -41,7 +43,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-    transform: translateY(-5px); /* Effet de déplacement vers le haut lors du survol */
+    transform: translateY(-5px);
 }
 
 nav ul li a {
@@ -56,7 +58,6 @@ nav ul li a {
     transition: color 0.3s ease, padding 0.3s ease;
 }
 
-/* Ajout d'un effet de sous-lignage personnalisé */
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -64,116 +65,105 @@ nav ul li a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background-color:  #ff6f61; /* Couleur d'accent */
+    background-color: #ff6f61;
     transition: width 0.3s ease;
 }
 
 nav ul li a:hover::after {
-    width: 100%; /* Sous-ligne qui s'étend au survol */
+    width: 100%;
 }
 
-/* Effet au survol de la barre de navigation */
-header:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Fond du header plus foncé lors du survol */
-}
+
+
+/* Responsive */
 .hamburger {
     display: none;
-    background: none;
-    border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #ff6f61; /* Couleur du hamburger */
+    color: #ff6f61;
+    background: none;
+    border: none;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
     nav ul {
-        display: none; /* Cache le menu par défaut */
+        display: none;
         flex-direction: column;
         background-color: #191717;
         position: fixed;
-        align-items: flex-start;
         top: 60px;
         right: 20px;
         width: 250px;
         border: 1px solid #ccc;
         border-radius: 5px;
-    
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: left;
-    }
-
-    nav ul li a {
-        font-size: 1rem;
-        padding-left: 10px;
     }
 
     nav ul.active {
-        display: flex; /* Affiche le menu lorsqu'il est actif */
+        display: flex;
     }
 
     .hamburger {
-        display: block; /* Affiche le bouton hamburger */
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
+        display: block;
     }
 }
 
 
-/* Pour les petits écrans */
-@media screen and (max-width: 768px) {
-    header {
-        padding: 10px 20px;
-        width: 100%;
-        flex-direction: column; /* Mettre le contenu en colonne */
-        align-items: center;
-    }
+/* Mode sombre */
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-    header nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
+body.dark-mode {
+    background-color: #121212; /* Fond sombre */
+    color: #ffffff; /* Texte clair */
+}
 
-    header .logo img {
-        margin: 0 auto; /* Centrer le logo pour les petits écrans */
-    }
+body.dark-mode header {
+    background-color: rgba(36, 36, 36, 0.8);
+}
+
+body.dark-mode nav ul li a {
+    color: #ff6f61;
+}
+
+body.dark-mode footer {
+    background-color: #1a1a1a;
+    color: #cccccc;
+}
+
+/* Ajout de styles pour d'autres parties de la page */
+body.dark-mode main {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+/* Tu peux aussi ajuster d'autres éléments comme des boutons ou des sections spécifiques */
+body.dark-mode .button {
+    background-color: #333;
+    color: #fff;
+}
+body.dark-mode .section {
+    background-color: #1e1e1e;
+    color: #ccc;
+}
+
+body.dark-mode .slider{
+    background-color: #1e1e1e;
+    color: #ccc;
 }
 
 
-
-/*--------------------------------------------------------*/
-
-
-
-
-/* Conteneur de la section */
-
-/* Section d'accueil */
-/* Global Styles */
-
-/* Global Styles */
+/*-----------------------------------------------------------------------------*/
 
 /* Section "Accueil" */
 
-/*----------------------------------------------------------------------*/
-
-/* Section "Accueil" */
-/* Global Styles */
 * {
     box-sizing: border-box; /* Inclut les marges/paddings dans le calcul des dimensions */
     margin: 0;
-    padding: 0;
+   
 }
 
 /* Section "Accueil" */
@@ -183,7 +173,7 @@ header:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2c2c2c; /* Fond plus sombre pour la section d'accueil */
+    background-color: #535151; /* Fond plus sombre pour la section d'accueil */
     overflow: hidden; /* Évite les débordements éventuels */
      box-sizing: border-box;
 
@@ -225,7 +215,7 @@ header:hover {
 .welcome-text p {
     font-size: 1.1rem;
     margin-bottom: 20px;
-    color: #dcdcdc; /* Texte plus clair pour améliorer la lisibilité */
+    color: #dcdcdc; /* Texte plus clair  */
 }
 
 .welcome-text .btn {
@@ -294,17 +284,22 @@ header:hover {
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
 }
 
+
+
+
+
+
 /*-----------------------------------------------------------------------*/
 
 
 
 
-/* Section "À propos" */
+
 /* Section "À propos" */
 .section {
     width: 100%;
     padding: 50px 20px;
-    background-color: #2c2c2c; /* Fond sombre pour correspondre aux autres sections */
+    background-color: #535151;; /* Fond sombre pour correspondre aux autres sections */
 }
 
 /* Box pour la section entière "À propos de moi" */
@@ -424,7 +419,6 @@ header:hover {
 
 
 
-/* Styles pour la section projets */
 /* Styles pour la section projets */
 .project-list {
     display: flex;
@@ -690,7 +684,10 @@ header:hover {
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
 }
 
+
+
 /*-----------------------------------------------------------------------*/
+
 
 /* Section Compétences */
 
@@ -779,10 +776,12 @@ header:hover {
 footer {
     text-align: center;
     padding: 20px 60px;
-    background-color: #121212;
+    background-color: #454242;
     color: #b0b0b0;
     width: 100%;
     left: 0;
+    position: relative; /* Assurez-vous qu'il reste dans son conteneur */
+    box-sizing: border-box;
     overflow: hidden;
 }
 
@@ -794,4 +793,3 @@ footer a {
 footer a:hover {
     color: #d04f3b; /* Changer la couleur des liens au survol */
 }
-
